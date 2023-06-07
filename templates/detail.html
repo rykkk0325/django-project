@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}顯示商品資料{% endblock %}
+{% block content %}
+<br>
+<br>
+<br>
+	<div class="jumbotron">
+ 		<div class="container">
+ 		<h1 class="display-3">{{ product.title }}</h1>
+ 		<div class="lead">{{ product.description }}</div>
+ 	</div>
+ </div>
+ <a href="/product/">Back</a>
+{% endblock %}

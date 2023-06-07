@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}顯示商品資料{% endblock %}
+{% block content %}
+<br>
+<br>
+<br>
+    <div class="card-columns">
+        {% for product in products %}
+        <div class="card">
+        <div class="card-body">
+
+            <h5 class="card-title">{{ product.title }}</h5>
+            <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap">
+            <p class="card-text">{{ product.description | truncatechars:100 }}</p>
+            <a href="#" class="card-link">{{ product.category }}</a>
+            <a href="/admin/product/product/{{ product.id }}/change/" class="card-link">Edit</a>
+            <a href="/admin/product/product/{{ product.id }}/delete/" class="card-link">Delete</a>
+
+            <hr>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}
